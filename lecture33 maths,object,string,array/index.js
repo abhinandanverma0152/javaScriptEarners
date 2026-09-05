@@ -52,35 +52,98 @@
 // console.log(Math2.ceil(4.2));         // 5
 // console.log(Math2.floor(4.9));        // 4
 
+// let product2 = {
+//     price: 57633,
+//     avgRating: 4.5,
+//     totalReviews: 75,
+//     discount: 10,
+//     productName: "iPhone 18 Pro Max",
+// }
+
+//     printProductName() {
+//         console.log(this.productName);
+//         return this.productName;
+//     },
+
+//     printDiscount() {
+//         console.log(this.discount + "%");
+//         return this.discount;
+//     },
+
+//     // New method: calculate final price after discount
+//     getFinalPrice() {
+//         let discountedPrice = this.price - (this.price * this.discount / 100);
+//         console.log("Final Price: ₹" + discountedPrice);
+//         return discountedPrice;
+//     }
+// }
+
+// // Testing
+// let res = product2.printProductName(); // logs "iPhone 18 Pro Max"
+// console.log("Returned:", res);
+
+// product2.printDiscount();              // logs "10%"
+// product2.getFinalPrice();              // logs "Final Price: ₹51869.7"
+
+
+
+// console.log(Object.keys(product2));
+// console.log(Object.entries(product2))
+
+
+// let product1=["iphone","dhjgh","hsd"];
+// for(value of product1){
+//     console.log(value);
+// }
+
+
+// product1.forEach(function(value, index) {
+//     console.log(value, index);
+// });
+
+// function a () {
+//     console.log("a");
+// }
+
+// function b(num) {
+//     console.log(num);
+//     num()
+//     console.log("b");
+// }
+ 
+// b(function(){
+//     console.log("a")
+// })
+
+
+//destruction  of object & arrays
+
+// let product1 =[5664,4.5,75,10,"iphone"]
+// const [a,b,c,d,f] = [5664,4.5,75,10,"iphone"]
+// console.log(c);
+// console.log(d);
+// console.log(a);
+
+
+
 let product2 = {
     price: 57633,
     avgRating: 4.5,
     totalReviews: 75,
-    discount: 10,
-    productName: "iPhone 18 Pro Max",
+    discount: 50,
+    productName: "iphone 25 pro max",
 
-    printProductName() {
+    printProductName : function() {
         console.log(this.productName);
-        return this.productName;
     },
-
-    printDiscount() {
-        console.log(this.discount + "%");
-        return this.discount;
-    },
-
-    // New method: calculate final price after discount
-    getFinalPrice() {
-        let discountedPrice = this.price - (this.price * this.discount / 100);
-        console.log("Final Price: ₹" + discountedPrice);
-        return discountedPrice;
+    printDiscount(){
+        console.log(this.discount);
     }
 }
 
-// Testing
-let res = product2.printProductName(); // logs "iPhone 18 Pro Max"
-console.log("Returned:", res);
+// Destructuring assignment
+let { price, printDiscount, avgRating } = product2;
 
-product2.printDiscount();              // logs "10%"
-product2.getFinalPrice();              // logs "Final Price: ₹51869.7"
+console.log(price , avgRating);
+
 
