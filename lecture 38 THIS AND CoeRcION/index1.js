@@ -35,5 +35,55 @@ console.log(name);
 // }
 // fun1();
 
+// let student = {
+//     name: "Aman",
+//     printName: function () {
+//         console.log("Hi!", student.name);
+//     }
+// }
+
+// student.printName()
+// let student2 = {
+//     name :"ram",
+//     printName : student.printName
+// }
+
+// student2.printName()
+
+// let num ="something"
+// let product ={
+//     name :"Iphone",
+//     printName : () => {
+//         console.log(this.name);
+//     }
+// }
+// product.printName()
 
 
+// function fun4() {
+//     let name = "something";
+
+//     let product = {
+//         name: "iPhone",
+//         printName: function () {
+//             const print = () => {
+//                 console.log(this.name);
+//             };
+//             print();
+//         }
+//     };
+
+//     product.printName();
+// }
+
+// fun4();
+
+
+let product = {
+        name: "iPhone"}
+
+ const print = () => {
+                console.log(this.name);
+            };
+            print();
+        
