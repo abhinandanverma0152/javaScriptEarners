@@ -39,7 +39,7 @@ todoForm.addEventListener("submit", (e) => {
 
 function renderTodo() {
     todoList.innerHTML = ""
-
+    //funtion for each loop
     todos.forEach(function (todo) {
         addTodo(todo);
     });
@@ -50,7 +50,7 @@ renderTodo(); // jab first time file execute hogi tab existing todos render ho j
 function addTodo(todo) {
     const li = document.createElement("li"); // <li></li>
     // li.textContent = todo.text; // actual todo
- li.dataset.id=todo.id
+    li.dataset.id = todo.id
     li.innerHTML = `
      <li data-id="1" class="flex gap-2 border border-slate-300 p-4 rounded-xl">
                 <input data-id=${todo.id} checked type="checkbox">
@@ -68,42 +68,48 @@ function addTodo(todo) {
 // event delegration
 todoList.addEventListener('click', (e) => {
 
-    let li=e.target.closest('li')
+    let li = e.target.closest('li')
     let btn = e.target.closest('button')
     let action = btn?.dataset.action;
     let id = li?.dataset?.id
-    let checkbox=e.target.closest('input[type="checkbox" ]')  //css selecter to checkbox to input e
+    let checkbox = e.target.closest('input[type="checkbox" ]')  //css selecter to checkbox to input e
     console.log(checkbox);
 
 
-    if (action === "edit") {
-        // edit wala part
-        console.log("editing....");
-    }
 
     if (action === "delete") {
-       deleteTodo(e,id)
+        deleteTodo(id)
 
     }
-      if(checkbox){
-        todos=todos.map((todo) => {
-            if(todo.id === Number(id)){
+
+    if (action === "edit") {
+        let currentTodo = todos.find((todo) => {
+            if (todo.id === Number(id)) {
+                return todo;
+            }
+        })
+        todoInput.value = currentTodo.text
+    }
+
+    if (checkbox) {
+        todos = todos.map((todo) => {
+            if (todo.id === Number(id)) {
                 console.log("hi")
                 return {
                     ...todo,
-                    isCompleted : !todo.isCompleted
+                    isCompleted: !todo.isCompleted
                 }
             }
             return todo
 
         })
         console.log(todos);
-      } 
+    }
 
-    
+
 })
 
-function deleteTodo(e,id) {
+function deleteTodo(e, id) {
     e.target.closest('li').remove()
 
     todos = todos.filter((todo) => {
