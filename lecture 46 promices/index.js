@@ -133,10 +133,49 @@
 
 
 
-Promise.reject("hi error").then(function f1(){
-    console.log("inside resolve promise");
- }).then(function f2(val){ 
-     console.log("then");
-     }).catch(function (err){
-        console.log(err)
-     });
+// Promise.reject("hi error").then(function f1(){
+//     console.log("inside resolve promise");
+//  }).then(function f2(val){ 
+//      console.log("then");
+//      }).catch(function (err){
+//         console.log(err)
+//      });
+
+
+function searchPizza() {
+    const p = new Promise(function(resolve, reject) {
+        console.log("Pizza searching...");
+
+        setTimeout(function fun() {
+            console.log("Here is the Pizza's Menu.");
+
+            let price = 500;
+
+            // reject(price)
+            resolve(price);
+
+        }, 2000);
+    });
+
+    return p;
+}
+
+// function addToCart(cb2) {
+//     console.log("Pizza adding to cart....");
+//     setTimeout(function fun2() {
+//         console.log("Pizza Added to cart");
+//         cb2();
+//     }, 3000);
+// }
+
+// function paymet(price) {
+//     console.log(`Payment Initiated , Amount : ${price}`);
+//     setTimeout(function fun3() {
+//         console.log(`Payment Completed, Amount : ${price}`);
+//         console.log("Bss Aa hee gaya Pizza");
+//     }, 5000);
+// }
+
+searchPizza().then(function(price) {
+    console.log(price);
+});
