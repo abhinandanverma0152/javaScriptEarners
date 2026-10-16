@@ -70,3 +70,12 @@ document.querySelector("#github-form").addEventListener("submit", async (e) => {
         <p>public repo : ${data.public_repo}</p>
     `
 })
+
+
+function updateStatus(){
+    document.querySelector("#Live-status").textContent=navigation.onLine ? "online" : "ofline"
+
+}
+
+window.addEventListener("online",updateStatus);
+window.addEventListener("offline",updateStatus);
