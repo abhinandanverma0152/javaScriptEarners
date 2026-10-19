@@ -10,7 +10,7 @@ const movieHub = document.querySelector("#movieHub");
 movieForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let query = movieInput.value.trim()
+    const query = movieInput.value.trim()
     if (!query) {
         return
     }
@@ -28,24 +28,25 @@ async function searchMovie(movieName) {
     let data = await response.json()
     console.log(data);
 
-    if(data.Responce === "True"){
+    if(data.Response === "True"){
         displayMovies(data.Search)
     }else{
          movieHub.innerHTML=`<p>${data.Error}</p>`
-    }
-
-    
+    }  
 
 }
 
 
 function displayMovies(movies) {
 
-     movieHub.innerHTML=""
+     movieHub.innerHTML= ""
 
 
     movies.forEach((movie) => {
         const div = document.createElement("div")
+        div.dataset.id=movie.imdbID
+
+        div.setAttribute("class","movie-card")
 
         div.innerHTML = ` 
             <div>
@@ -58,7 +59,21 @@ function displayMovies(movies) {
 
             </div>
         `
+
+     
         movieHub.append(div)
     })
 }
 
+
+
+movieHub.addEventListener("click",(e)=>  {
+    e.stopPropagation();
+   const movieCard= e.target.closest(".movie-card")
+   
+   const imdbID = movieCard.dataset.id;
+   location.href=`movie-details.html?id=${imdbID}`
+
+   
+
+})
