@@ -5,6 +5,7 @@ const movieForm = document.querySelector("#movieForm");
 
 const movieInput = document.querySelector("#movieInput");
 const movieHub = document.querySelector("#movieHub");
+const hamburger = document.querySelector("#hamburger");
 
 
 movieForm.addEventListener("submit", (e) => {
@@ -76,4 +77,49 @@ movieHub.addEventListener("click",(e)=>  {
 
    
 
+})
+
+
+let data=[{
+    "Title": "Italian Spiderman",
+    "Year": "2007",
+    "Rated": "N/A",
+    "Released": "08 Nov 2007",
+    "Runtime": "40 min",
+    "Genre": "Short, Action, Comedy",
+    "Director": "Dario Russo",
+    "Writer": "Dario Russo, David Ashby, Tait Wilson",
+    "Actors": "David Ashby, Chris Asimos, Anna Cashman",
+    "Plot": "Have you ever wondered what would happen if an Italian producer took quaaludes, stumbled into a theater, and saw the first 5 minutes of spider man 2? Well worry no more because Italian Spider-Man is here to haunt your dreams with meteors, snake men, and macchiatos. Let's do it PussyCat!",
+    "Language": "English, Italian",
+    "Country": "Australia",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYWNiMmNlNmQtZTI2MS00MzAxLTgxM2QtNDY3ZGQxNDMwZDgzXkEyXkFqcGc@._V1_QL75_UY562_CR9,0,380,562_.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.8/10"
+        }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.8",
+    "imdbVotes": "1,391",
+    "imdbID": "tt2705436",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "N/A",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+}]
+
+displayMovies(data)
+
+
+hamburger.addEventListener("click",(e) => {
+    e.stopPropagation();
+
+
+   options.classList.toggle("hidden")
+    console.log("hii");
 })
