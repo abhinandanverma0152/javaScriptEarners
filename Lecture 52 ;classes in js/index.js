@@ -21,9 +21,9 @@
 // console.log(this);
 
 
-function product(name,price){
-    console.log(this);
-}
+// function product(name,price){
+//     console.log(this);
+// }
 
 // let user={
 //     name : "Abhinandan Verma"
@@ -48,11 +48,11 @@ function product(name,price){
 
 
 
-function product(name,price){
-    this.name=name
-    this.price=price
-   return this;
-}
+// function product(name,price){
+//     this.name=name
+//     this.price=price
+//    return this;
+// }
 
 // const p1 = product("Iphone 2324 pro max ultra galaxy fold", 3425235531);
 // const p2 = product("Samsung 54321 galaxy fold black hole spaceship", 4532528797);
@@ -147,51 +147,60 @@ function product(name,price){
 
 
 
-class BankAccount {
+// class BankAccount {
 
-    #balance; // this is private property
+//     #balance; // this is private property
 
-    static totalBankAccount = 0;
+//     static totalBankAccount = 0;
 
-    constructor(initialBalance) {
-        this.#balance = initialBalance;
-        BankAccount.totalBankAccount++;
-    }
+//     constructor(initialBalance) {
+//         this.#balance = initialBalance;
+//         BankAccount.totalBankAccount++;
+//     }
 
-    get() { // method
-        console.log(this.#balance);
-    }
+//     get() { // method
+//         console.log(this.#balance);
+//     }
 
-    withdraw(amount) { // method
-        if (amount > this.#balance) {
-            console.log("Bete itne paise na hai tere pass");
-            return;
-        }
+//     withdraw(amount) { // method
+//         if (amount > this.#balance) {
+//             console.log("Bete itne paise na hai tere pass");
+//             return;
+//         }
 
-        this.#balance = this.#balance - amount;
-    }
+//         this.#balance = this.#balance - amount;
+//     }
 
-    deposit(amount) { // method
-        if (amount <= 0) {
-            console.log("Bete pagal samjha hua kya, muje aate hai edge cases handle karna");
-            return;
-        }
+//     deposit(amount) { // method
+//         if (amount <= 0) {
+//             console.log("Bete pagal samjha hua kya, muje aate hai edge cases handle karna");
+//             return;
+//         }
 
-        this.#balance = this.#balance + amount;
-    }
+//         this.#balance = this.#balance + amount;
+//     }
 
-    static calculateTax() { // static method
-        console.log("calculating tax...");
+//     static calculateTax() { // static method
+//         console.log("calculating tax...");
+//     }
+// }
+// const acc1 = new BankAccount(1000);
+
+// acc1.get();        // 1000
+// acc1.deposit(500);
+// acc1.get();        // 1500
+
+// acc1.withdraw(200);
+// acc1.get();        // 1300
+
+// console.log(BankAccount.totalBankAccount); // 1
+// BankAccount.calculateTax();
+
+
+
+class product{
+    constructor(){
+        console.log(this);
     }
 }
-const acc1 = new BankAccount(1000);
-
-acc1.get();        // 1000
-acc1.deposit(500);
-acc1.get();        // 1500
-
-acc1.withdraw(200);
-acc1.get();        // 1300
-
-console.log(BankAccount.totalBankAccount); // 1
-BankAccount.calculateTax();
+new product();
